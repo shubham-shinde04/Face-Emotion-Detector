@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Face Emotion Detector</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Face Emotion Detector</h1>
+  <p>Photo upload kara kiva live camera vapra — chehryanusar emoji disel</p>
+</header>
+
+<main>
+  <section class="panel">
+    <div class="tabs">
+      <button id="tabPhoto" class="on">Photo Upload</button>
+      <button id="tabCam">Live Camera</button>
+    </div>
+
+    <div class="stage" id="stage">
+      <div class="hint" id="hint">Choose photo or Start Camera</div>
+      <img id="photo" style="display:none" alt="uploaded">
+      <video id="video" autoplay muted playsinline style="display:none"></video>
+      <canvas id="overlay"></canvas>
+    </div>
+
+    <div class="row" id="photoControls">
+      <label class="btn primary" for="file">Choose Photo</label>
+      <input type="file" id="file" accept="image/*">
+    </div>
+
+    <div class="row" id="camControls" style="display:none">
+      <button class="btn primary" id="camStart">Camera Start</button>
+      <button class="btn" id="camStop">Stop</button>
+    </div>
+
+    <div id="status">Models loading...</div>
+  </section>
+
+  <section class="panel big">
+    <div id="emoji">🙂</div>
+    <div id="label">—</div>
+    <div class="bars" id="bars"></div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/dist/face-api.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

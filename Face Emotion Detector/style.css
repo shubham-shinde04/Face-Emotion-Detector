@@ -1,0 +1,176 @@
+
+:root{
+  --bg:#14213d;
+  --panel:#1d2f55;
+  --ink:#f5f7fb;
+  --muted:#a9b6d3;
+  --accent:#ffc247;
+  --line:#2f4577;
+}
+
+*{
+  box-sizing:border-box
+}
+
+body{
+  margin:0;
+  font-family:"Trebuchet MS",Verdana,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh
+}
+
+header{
+  padding:22px 20px 8px;
+  text-align:center
+}
+
+h1{
+  margin:0;
+  font-size:1.7rem;
+  letter-spacing:.3px
+}
+
+header p{
+  margin:6px 0 0;
+  color:var(--muted)
+}
+
+main{
+  max-width:980px;
+  margin:0 auto;
+  padding:16px;
+  display:grid;
+  gap:18px;
+  grid-template-columns:1.4fr 1fr
+}
+
+@media(max-width:800px){
+  main{
+    grid-template-columns:1fr
+  }
+}
+
+.panel{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:12px
+}
+
+.tabs button,.btn{
+  font:inherit;
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--ink);
+  padding:9px 16px;
+  border-radius:10px;
+  cursor:pointer
+}
+
+.tabs button.on,.btn.primary{
+  background:var(--accent);
+  color:#1a1a1a;
+  border-color:var(--accent);
+  font-weight:bold
+}
+
+.stage{
+  position:relative;
+  width:100%;
+  aspect-ratio:4/3;
+  background:#0c1630;
+  border-radius:10px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center
+}
+
+.stage video,.stage img,.stage canvas{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain
+}
+
+.stage .hint{
+  color:var(--muted);
+  text-align:center;
+  padding:20px
+}
+
+.row{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+  flex-wrap:wrap;
+  align-items:center
+}
+
+input[type=file]{
+  display:none
+}
+
+#status{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:10px;
+  min-height:1.2em
+}
+
+.big{
+  text-align:center
+}
+
+#emoji{
+  font-size:7rem;
+  line-height:1.1;
+  transition:transform .15s
+}
+
+#label{
+  font-size:1.5rem;
+  font-weight:bold;
+  margin-top:4px
+}
+
+.bars{
+  margin-top:14px;
+  display:grid;
+  gap:7px
+}
+
+.bar{
+  display:grid;
+  grid-template-columns:28px 80px 1fr 44px;
+  align-items:center;
+  gap:8px;
+  font-size:.88rem
+}
+
+.bar .track{
+  height:9px;
+  background:#0c1630;
+  border-radius:6px;
+  overflow:hidden
+}
+
+.bar .fill{
+  height:100%;
+  width:0;
+  background:var(--accent);
+  transition:width .2s
+}
+
+.bar span:last-child{
+  text-align:right;
+  color:var(--muted)
+}
